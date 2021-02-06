@@ -4,7 +4,9 @@
 
 This is a demo ML classifier that runs in a Docker container and exposes an API enpoint for predictions.
 
-## Getting Started
+## API in Docker
+
+### Getting Started
 
 1. Clone the repository.
 
@@ -43,7 +45,7 @@ docker inspect CONTAINER_ID # Get IP address
 curl "http://172.17.0.3/predict?VisitsLastYear=123&QuestionTextLength=456"
 ```
 
-## Request and response format
+### Request and response format
 
 Provide the following parameters as query parameters. These are used as input features for the model.
 
@@ -55,5 +57,46 @@ Provide the following parameters as query parameters. These are used as input fe
 Example response:
 
 ```json
-{"prediction":false}
+{ "prediction": false }
 ```
+
+## Jupyter Notebook
+
+To see how the model was created, view the provided Jupyter notebook.
+
+### Getting Started
+
+1. Clone the repository.
+
+```bash
+git clone https://github.com/bjornorri/moonraker.git
+```
+
+2. Navigate to the project directory.
+
+```bash
+cd moonraker
+```
+
+3. (Optional) Create and activate a virtual environment.
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+4. Install dependencies.
+
+```bash
+pip install -r requirements.txt
+```
+
+5. Run the Jupyter server. This should launch your browser.
+
+```bash
+jupyter notebook
+```
+
+## Advanced model
+
+If I create a more advanced model (optional task), I will do it on another branch in this repository.
