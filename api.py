@@ -1,8 +1,12 @@
-import flask
+import os
 from joblib import load
+import flask
+
+PORT = os.getenv('PORT') or 8080
 
 app = flask.Flask(__name__)
 model = load('model.joblib')
+
 
 @app.route('/predict', methods=['GET'])
 def predict():
@@ -19,6 +23,7 @@ def predict():
 
     return flask.jsonify({'prediction': prediction})
 
+
 def is_int(value):
     if value is None:
         return False
@@ -28,7 +33,7 @@ def is_int(value):
         return True
     except ValueError:
         return False
-    
+
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=PORT)
