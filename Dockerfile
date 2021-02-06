@@ -4,9 +4,8 @@ ENV PORT=80
 EXPOSE 80
 
 COPY model.joblib /.
-COPY requirements.txt /.
 COPY api.py /.
 
-RUN pip install -r requirements.txt
+RUN pip install flask sklearn
 
 CMD [ "python", "./api.py"]
