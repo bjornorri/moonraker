@@ -97,6 +97,8 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
+6. Open `community_questions.ipynb`.
+
 ## Advanced model
 
 If I create a more advanced model (optional task), I will do it on another branch in this repository.
